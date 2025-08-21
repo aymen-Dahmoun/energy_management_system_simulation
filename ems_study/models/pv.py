@@ -55,7 +55,7 @@ def pvPowerForecast(flag=True, pv_count=PV_COUNT,
 
     # Prepare PV output
     pv_output_df = ac_power.reset_index()
-    pv_output_df.columns = ['Time', 'pv']
+    pv_output_df.columns = ['Time', 'PV']
     pv_output_df['Time'] = pd.to_datetime(pv_output_df['Time'], utc=True)
 
     # Match lengths
@@ -64,9 +64,9 @@ def pvPowerForecast(flag=True, pv_count=PV_COUNT,
     pv_output_df = pv_output_df.iloc[:min_length]
 
     # Update 'pv' column
-    if 'pv' in existing_df.columns:
-        existing_df.drop(columns=['pv'], inplace=True)
-    existing_df['pv'] = pv_output_df['pv'].values
+    if 'PV' in existing_df.columns:
+        existing_df.drop(columns=['PV'], inplace=True)
+    existing_df['PV'] = pv_output_df['PV'].values
 
     # Save updated CSV
     existing_df.to_csv(existing_file_path, index=False)
