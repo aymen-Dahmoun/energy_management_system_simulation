@@ -5,11 +5,14 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from models.windPowerForcat import windPowerForecast
+from models.pv import pvPowerForecast
 from simulation.controller100storage import EnergyController
 EnergyController = EnergyController()
 
 flag = False
 annual_power_wind_production = windPowerForecast(flag)
+annual_power_pv_production = pvPowerForecast(flag)
+
 
 df = pd.read_csv(
     r"data\annual_power_input.csv",
@@ -72,10 +75,8 @@ penetration_wind_peakhour = sum_wind_to_load_peakhour / sum_load_peackhour * 100
 
 total_penetration_peakhour = penetration_wind_peakhour + penetration_pv_peakhour + penetration_storage_peakhour
 
-
-if not flag:
-    print("annual wind energy production: ", annual_power_wind_production, "MWh")
-    
+print("annual wind energy production: ", annual_power_wind_production, "MWh")
+print("annual wind energy production: ", annual_power_pv_production, "MWh")
 print(f"Total penetration of renewable energy: {total_renewable_penetration:.2f}%")
 print(f"PV penetration: {penetration_pv:.2f}%")
 print(f"Storage penetration: {penetration_storage:.2f}%")

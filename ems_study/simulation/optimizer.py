@@ -2,8 +2,8 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-from final_project.config import BATTERY_NOMINAL_POWER_MW, BATTERY_CAPACITY_MWh
-from controller100storage import EnergyController
+from ems_study.config import BATTERY_CAPACITY_MWh
+from .controller import EnergyController
 
 import pandas as pd
 

@@ -2,7 +2,7 @@ import numpy as np
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-from final_project.config import BATTERY_NOMINAL_POWER_MW, BATTERY_CAPACITY_MWh
+from ems_study.config import BATTERY_NOMINAL_POWER_MW, BATTERY_CAPACITY_MWh
 
 class BatterySystem():
     def __init__(self, capacity_MWh=BATTERY_CAPACITY_MWh, nominal_power_MW=BATTERY_NOMINAL_POWER_MW, efficiency=1, 

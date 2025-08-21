@@ -6,8 +6,8 @@ import os
 # Append the project root to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
-from final_project.models.battery import BatterySystem  # Now it should work
-from final_project.config import BATTERY_NOMINAL_POWER_MW, BATTERY_CAPACITY_MWh
+from ems_study.models.battery import BatterySystem  # Now it should work
+from ems_study.config import BATTERY_NOMINAL_POWER_MW, BATTERY_CAPACITY_MWh
 
 
 class EnergyController:
