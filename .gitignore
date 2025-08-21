@@ -1,0 +1,54 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Python egg / build artifacts
+*.egg-info/
+*.egg
+build/
+dist/
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Environment files
+.env
+*.env
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Data files (optional, keep if you want versioned data)
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.npz
+*.npy
+
+# Plots / images (optional, ignore generated outputs)
+*.png
+*.jpg
+*.jpeg
+*.pdf
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
