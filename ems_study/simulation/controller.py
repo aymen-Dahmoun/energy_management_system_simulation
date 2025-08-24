@@ -22,11 +22,6 @@ class EnergyController:
           - On OFF-PEAK hours: prefers charging battery with surplus; avoids discharging unless needed for stability.
           - Splits surplus between storage and grid, respecting nominal power and efficiency.
           - Preserves the original return structure and semantics.
-
-        Assumptions:
-          - BatterySystem.charge(power_MW) and .discharge(power_MW) enforce internal limits (SoC, capacity, nominal power)
-            and update SoC. We record flows with efficiency applied (as your previous code did).
-          - pv_power, wind_power, load_demand are instantaneous power values (MW) at the timestep.
         """
 
         # -------------------- Init all outputs to zero (preserve keys) --------------------
@@ -127,10 +122,7 @@ class EnergyController:
         load_demand_peakhour = load_demand if is_peak else 0.0
 
         # -------------------- Step 6: Preserve original return structure -----------------
-        # The original code encoded grid import as negative `grid` internally, then:
-        #   "grid_to_load": -grid (i.e., positive import)
-        #   "system_to_grid": system_to_grid (i.e., positive export)
-        # We’ll just set the final fields directly as expected by callers.
+
         return {
             "Time": time,
             "pv_to_load": pv_to_load,
