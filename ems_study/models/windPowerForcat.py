@@ -5,11 +5,13 @@ import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from ems_study.config import TURBINE_COUNT, TURBINE_TYPE
 
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))  # project root
+DATA_DIR = os.path.join(BASE_DIR, "data")
 
 def windPowerForecast(flag=False, turbine_count=TURBINE_COUNT, turbine_type=TURBINE_TYPE):
     # File paths
-    file_weather_path = r"data\weather.csv"
-    existing_file_path = r"data\annual_power_input.csv"
+    file_weather_path = r"/Users/MAC/energy_management_system_simulation/ems_study/data/weather.csv"
+    existing_file_path = r"/Users/MAC/energy_management_system_simulation/ems_study/data/annual_power_input.csv"
 
     # Load weather data
     weather_raw = pd.read_csv(file_weather_path, header=[0, 1], index_col=0, parse_dates=True)

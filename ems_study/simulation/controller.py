@@ -43,6 +43,7 @@ class EnergyController:
         eff = getattr(self.battery, "efficiency", 1.0)
 
         # -------------------- Step 1: Serve load from PV then Wind -----------------------
+
         remaining_load = float(load_demand)
 
         pv_to_load = min(pv_power, remaining_load)
@@ -54,7 +55,7 @@ class EnergyController:
         wind_remain = wind_power - wind_to_load  # Wind not used for load
 
         # -------------------- Step 2: Battery vs Grid for residual load ------------------
-        # Peak: discharge before grid, Off-peak: prefer grid (keep battery for peak)
+
         if remaining_load > 0:
             if is_peak and soc > 20:
                 # Discharge limited by nominal power

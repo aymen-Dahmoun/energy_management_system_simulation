@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the data
-csv_path = r"C:\Users\pc\Desktop\project\ems_study\results\final_output.csv"
+csv_path = r"../results/final_output.csv"
 df = pd.read_csv(csv_path)
 
 # Ensure 'Time' is parsed correctly

@@ -6,7 +6,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from models.windPowerForcat import windPowerForecast
 from models.pv import pvPowerForecast
-from simulation.controller100storage import EnergyController
+from simulation.controller import EnergyController
 EnergyController = EnergyController()
 
 flag = False
@@ -15,7 +15,7 @@ annual_power_pv_production = pvPowerForecast(flag)
 
 
 df = pd.read_csv(
-    r"data\annual_power_input.csv",
+    r"/Users/MAC/energy_management_system_simulation/ems_study/data/annual_power_input.csv",
     sep=",",
     encoding="utf-8-sig",
 )

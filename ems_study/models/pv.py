@@ -7,8 +7,8 @@ def pvPowerForecast(flag=True, pv_count=PV_COUNT,
                     tilt=PV_TILT, azimuth=PV_AZIMUTH,
                     module_name=PV_MODULE, inverter_name=PV_INVERTER):
     # File paths
-    file_weather_path = r"data\weather_pv.csv"
-    existing_file_path = r"data\annual_power_input.csv"
+    file_weather_path = r"data/weather_pv.csv"
+    existing_file_path = r"data/annual_power_input.csv"
 
     # Load weather data
     weather_raw = pd.read_csv(file_weather_path, index_col=0, parse_dates=True)

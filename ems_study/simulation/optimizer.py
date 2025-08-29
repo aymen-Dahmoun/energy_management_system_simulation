@@ -1,9 +1,8 @@
 # simulation/optimizer.py
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from ems_study.config import BATTERY_CAPACITY_MWh
-from .controller import EnergyController
+from controller import EnergyController
 
 import pandas as pd
 
